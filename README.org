@@ -1,0 +1,18 @@
+
+Camera_viability.json (cameras_v1.json) is the json file containing all of the cameras ids with a number indicating how many
+weeks they were inactive over from april 1st 2020 to january 1st 2021 as determined by camera_filter.py 
+
+cameras_v2.json is cameras_v1 after removing all entries in the json containing 10 or more frozen weeks
+Script is /local/b/la/cam2/COVID-19/new_image_vetting/COVID19mobilityPaperCode/new_image_vetting/threshold_frozen_cameras.py to output cameras_v2.json
+
+Scene_Classification/classif_cams-gpu.py outputs ‘classification’ which is a json file 
+classif_cams-gpu.py loads databaseiterator from  /local/a/cam2/COVID-19/Scene_Classification/database_iterator_30kcams.py 
+Also loads scenedetection from  /local/a/cam2/COVID-19/Scene_Classification/scene_detection_gpu.py
+
+Scene_Classification/place_country.py uses the classifications json and outputs a copy of the json but renamed and
+with all cameras deemed (via places output) to be irrelevant for capturing mobility removed. This is done by voting (if top two in people/vehicle locations, choose it, if not, remove it)
+people/vehicle locations are hard-coded in this file (107 people places, 8 vehicle places)
+
+/local/b/la/cam2/COVID-19/new_image_vetting/COVID19mobilityPaperCode/new_image_vetting/select_countries.py takes in ‘json with country and type specified’ (combined2021allcamerasReallyrealactual.json), outputs cameras_v3.json
+
+Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations we decided not to run detection on (for the sake of a smaller json file) - can be done with a simple python script
