@@ -1,3 +1,11 @@
+
+# This script was written to be run many times
+# in parallel as jobs on a computing cluster.
+#
+# I would recommended the use a bash script to
+# call this script many times to
+# iterate over a range of cameras.
+
 import json
 import argparse
 import numpy as np
@@ -24,13 +32,6 @@ IMG_SIZE = 512
 COUNTRY = 'AU'
 
 
-def determine_day_night(image):  # determines whether or not an image is captured during the day or night
-    # 0 denotes night, 1 denotes day
-    return np.mean(image)
-    #if np.mean(image) > 60:
-        # this image was taken during the day
-     #   return 1
-    #return 0
 
 if __name__ == "__main__":
     valid_cams = {}
@@ -39,7 +40,6 @@ if __name__ == "__main__":
 
     with open('cameras_v3.json', 'r') as fp:
         cam_country = json.load(fp)
-        #print(valid_cams)
  
 
 
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     cam_l = lines
     print(cam_l)
     cams = valid_cams.keys()
-    #cam_l = [i + '/' for i in cam_l]
+    
     filename = os.path.join("vehicle_detections_image_" + COUNTRY + "_augtodec.json")
     numcams = len(cams)
     count = 0
