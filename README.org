@@ -13,6 +13,6 @@ Scene_Classification/place_country.py uses the classifications json and outputs 
 with all cameras deemed (via places output) to be irrelevant for capturing mobility removed. This is done by voting (if top two in people/vehicle locations, choose it, if not, remove it)
 people/vehicle locations are hard-coded in this file (107 people places, 8 vehicle places)
 
-/local/b/la/cam2/COVID-19/new_image_vetting/COVID19mobilityPaperCode/new_image_vetting/select_countries.py takes in ‘json with country and type specified’ (combined2021allcamerasReallyrealactual.json), outputs cameras_v3.json
+select_countries.py takes in ‘json with country and type specified’ (combined2021allcamerasReallyrealactual.json), outputs cameras_v3.json
 
 Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations we decided not to run detection on (for the sake of a smaller json file) - can be done with a simple python script
