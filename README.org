@@ -16,3 +16,5 @@ people/vehicle locations are hard-coded in this file (107 people places, 8 vehic
 select_countries.py takes in ‘json with country and type specified’ (combined2021allcamerasReallyrealactual.json), outputs cameras_v3.json
 
 Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations we decided not to run detection on (for the sake of a smaller json file) - can be done with a simple python script
+
+At this point in the pipeline we have a json file containing all of the camera IDs that are relevant to a specific mobility study like the one in the paper. Make sure the detect_*.py files are configured correctly, are iterating over the most filtered cameras json file, and are loading the models correctly. Then, run detection and you'll then get refined, mobility relevant data in the form of object counts over time.
