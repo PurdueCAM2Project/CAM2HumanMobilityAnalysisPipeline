@@ -44,4 +44,3 @@ Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations w
 ** DETECTION
    - detect_people_image_cams_individual.py
    - detect_cars_image_cams_local.py
->>>>>>> Stashed changes
