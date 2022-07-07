@@ -12,6 +12,11 @@ from torchvision import transforms as trn
 from database_iterator_30kcams import database_iterator
 from scene_detection_gpu import SceneDetectionClass
 
+
+# Usage: this script is used by camera_vetting_pipeline.py
+# it can be called from the commandline and will output classifications
+
+
 def brightness(image, tf): 
     img = tf(image).cuda()
     thresh = torch.mean((img > 0.5).float() * 255)
@@ -193,4 +198,3 @@ if run_classification(database_root_link='http://vision.cs.luc.edu/~cv/images/')
 
 if __name__ == "__main__":
     run_classification()
-    

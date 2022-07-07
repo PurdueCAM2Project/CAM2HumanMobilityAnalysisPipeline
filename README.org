@@ -1,12 +1,22 @@
 * What is this repo?
-  This repo contains all of the code for the paper [] along with sample files from our actual database usage.
-* Prerequisites
-To run on your own
+  This repo contains code pertaining to the paper [] along with sample files from our actual database usage.
+* Our Image Archival setup
 https://github.com/PurdueCAM2Project/CAM2ImageDatabase
 https://github.com/PurdueCAM2Project/CAM2ImageArchiver
 
+  $ crontab -l
+  SHELL=/bin/bash
+  0 0-23/5 * * 0 $HOME/cron-submit-camcheck.sh
+  0 1-23/5 * * 1 $HOME/cron-submit-camcheck.sh
+  0 2-23/5 * * 2 $HOME/cron-submit-camcheck.sh
+  0 3-23/5 * * 3 $HOME/cron-submit-camcheck.sh
+  0 4-23/5 * * 4 $HOME/cron-submit-camcheck.sh
+  0 3-23/5 * * 5 $HOME/cron-submit-camcheck.sh
+  0 2-23/5 * * 6 $HOME/cron-submit-camcheck.sh
+
 * Tool Documentation
-  Each individual python script will be commented outlining its use. camera_filter_pipeline.py is a python script that stitches together all our filtering steps into a single script.
+  Each individual python script will have comments in the source code  outlining its use/functionalty. camera_vetting_pipeline.py
+  is a python script that stitches together all our filtering steps into a single script.
 
 
 * Pipeline Explained w/ our sample output files
@@ -28,19 +38,7 @@ select_countries.py takes in ‘json with country and type specified’ (combine
 
 At this point in the pipeline we have a json file containing all of the camera IDs that are relevant to a specific mobility study like the one in the paper. Make sure the detect_*.py files are configured correctly, are iterating over the most filtered cameras json file, and are loading the models correctly. Then, run detection and you'll then get refined, mobility relevant data in the form of object counts over time.
 
-Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations we decided not to run detection on (for the sake of a smaller json file) - can be done with a simple python script (camera_filter_pipeline.py optionally does this automatically depending on input parameters)
+Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations we decided not to run detection on (for the sake of a smaller json file) - can be done with a simple python script (camera_vetting_pipeline.py optionally does this automatically depending on input parameters)
 
-* End to end pipeline
-** FILTERING
-   camera_filter_pipeline.py
-*** STEP 1
-   Filter out dead cameras
-   - camera_filter.py
-*** STEP 2
-   Find cameras relevant to mobility
-*** STEP 3
-   
-*** STEP 4
-** DETECTION
-   - detect_people_image_cams_individual.py
-   - detect_cars_image_cams_local.py
+Once this is obtained the scripts detect_people_image_cams_individual.py and detect_cars_image_cams_local.py can be used
+to run detection on the cameras relevant to analysis.
