@@ -16,7 +16,7 @@ https://github.com/PurdueCAM2Project/CAM2ImageArchiver
 #+END_SRC bash
 We have our cron jobs set up to capture data from different times of the day, but on a periodicity that allows for meaningful longitudinal comparison.
 
-* Tool Documentation
+* Script Documentation
   Each individual python script will have comments in the source code  outlining its use/functionalty. camera_vetting_pipeline.py
   is a python script that stitches together all our filtering steps into a single script.
 
