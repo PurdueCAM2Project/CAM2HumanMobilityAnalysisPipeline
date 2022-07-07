@@ -3,7 +3,7 @@
 * Image Archival
 https://github.com/PurdueCAM2Project/CAM2ImageDatabase
 https://github.com/PurdueCAM2Project/CAM2ImageArchiver
-
+#+BEGIN_SRC bash
   $ crontab -l
   SHELL=/bin/bash
   0 0-23/5 * * 0 $HOME/cron-submit-camcheck.sh
@@ -13,7 +13,7 @@ https://github.com/PurdueCAM2Project/CAM2ImageArchiver
   0 4-23/5 * * 4 $HOME/cron-submit-camcheck.sh
   0 3-23/5 * * 5 $HOME/cron-submit-camcheck.sh
   0 2-23/5 * * 6 $HOME/cron-submit-camcheck.sh
-
+#+END_SRC bash
 We have our cron jobs set up to capture data from different times of the day, but on a periodicity that allows for meaningful longitudinal comparison.
 
 * Tool Documentation
