@@ -1,4 +1,15 @@
+* What is this repo?
+  This repo contains all of the code for the paper [] along with sample files from our actual database usage.
+* Prerequisites
+To run on your own
+https://github.com/PurdueCAM2Project/CAM2ImageDatabase
+https://github.com/PurdueCAM2Project/CAM2ImageArchiver
 
+* Tool Documentation
+  Each individual python script will be commented outlining its use. camera_filter_pipeline.py is a python script that stitches together all our filtering steps into a single script.
+
+
+* Pipeline Explained w/ our sample output files
 Camera_viability.json (cameras_v1.json) is the json file containing all of the cameras ids with a number indicating how many
 weeks they were inactive over from april 1st 2020 to january 1st 2021 as determined by camera_filter.py 
 
@@ -15,6 +26,22 @@ people/vehicle locations are hard-coded in this file (107 people places, 8 vehic
 
 select_countries.py takes in ‘json with country and type specified’ (combined2021allcamerasReallyrealactual.json), outputs cameras_v3.json
 
-Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations we decided not to run detection on (for the sake of a smaller json file) - can be done with a simple python script
-
 At this point in the pipeline we have a json file containing all of the camera IDs that are relevant to a specific mobility study like the one in the paper. Make sure the detect_*.py files are configured correctly, are iterating over the most filtered cameras json file, and are loading the models correctly. Then, run detection and you'll then get refined, mobility relevant data in the form of object counts over time.
+
+Cameras_v4.json is after country vetting cameras_v3.json, ignore the locations we decided not to run detection on (for the sake of a smaller json file) - can be done with a simple python script (camera_filter_pipeline.py optionally does this automatically depending on input parameters)
+
+* End to end pipeline
+** FILTERING
+   camera_filter_pipeline.py
+*** STEP 1
+   Filter out dead cameras
+   - camera_filter.py
+*** STEP 2
+   Find cameras relevant to mobility
+*** STEP 3
+   
+*** STEP 4
+** DETECTION
+   - detect_people_image_cams_individual.py
+   - detect_cars_image_cams_local.py
+>>>>>>> Stashed changes
