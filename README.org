@@ -1,6 +1,6 @@
 * What is this repo?
-  This repo contains code pertaining to the paper [] along with sample files from our actual database usage.
-* Our Image Archival setup
+  This repo contains code pertaining to the paper "Observing Human Mobility Internationally During COVID-19" along with the actual output files for each step in our camera vetting pipeline for posterity and to serve as an example.
+* Image Archival
 https://github.com/PurdueCAM2Project/CAM2ImageDatabase
 https://github.com/PurdueCAM2Project/CAM2ImageArchiver
 
@@ -14,12 +14,14 @@ https://github.com/PurdueCAM2Project/CAM2ImageArchiver
   0 3-23/5 * * 5 $HOME/cron-submit-camcheck.sh
   0 2-23/5 * * 6 $HOME/cron-submit-camcheck.sh
 
+We have our cron jobs set up to capture data from different times of the day, but on a periodicity that allows for meaningful longitudinal comparison.
+
 * Tool Documentation
   Each individual python script will have comments in the source code  outlining its use/functionalty. camera_vetting_pipeline.py
   is a python script that stitches together all our filtering steps into a single script.
 
 
-* Pipeline Explained w/ our sample output files
+* Pipeline Explained with our sample output files
 Camera_viability.json (cameras_v1.json) is the json file containing all of the cameras ids with a number indicating how many
 weeks they were inactive over from april 1st 2020 to january 1st 2021 as determined by camera_filter.py 
 
