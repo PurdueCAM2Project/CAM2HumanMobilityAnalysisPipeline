@@ -140,8 +140,8 @@ def dict_mean_sort(classif, length):
     return ret_dict
 
 
-if __name__ == "__main__":
-    i = database_iterator()
+if run_classification(database_root_link='http://vision.cs.luc.edu/~cv/images/'):
+    i = database_iterator(database_root_link)
     x = SceneDetectionClass()
     print(f"total network cameras: {i.numcams}")
     cam_list_pred = dict()
@@ -189,3 +189,8 @@ if __name__ == "__main__":
         f = open("classifications", "w")
         f.write(json.dumps(cam_list_pred))
         f.close()
+    return cam_list_pred
+
+if __name__ == "__main__":
+    run_classification()
+    

@@ -126,10 +126,11 @@ vehicle_places = ['highway',
 
 
 
-def main():
+def filter_by_place(places=None):
     combined_dictionary = {}
-    with open('classifications_real.json', 'r') as json_file:
-        places = json.load(json_file)
+    if places is None:
+        with open('classifications_real.json', 'r') as json_file:
+            places = json.load(json_file)
     camera_database = pd.read_csv('camera_database.csv')
     cam_count = 0
     close_call_count = 0
@@ -192,9 +193,10 @@ def main():
        
     with open("combined2021allcamerasReallyRealActual.json", "w") as f:
         json.dump(combined_dictionary, f)
-    print('close call count : )    ', close_call_count)
+    return combined_dictionary
+    
 
 
 
 if __name__ == '__main__':
-    main()
+    filter_by_place()
