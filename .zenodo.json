@@ -1,0 +1,128 @@
+{
+    "upload_type": "software",
+    "title": "CAM2HumanMobilityAnalysisPipeline",
+    "creators": [
+        {
+        "name": "Allcroft, Shane",
+        "affiliation": "",
+        "orcid": "0000-0002-7903-5091"
+        },
+	
+        {
+        "name": "Metwaly, Mohammed",
+        "affiliation": "Purdue University",
+        "orcid": ""
+        },
+	
+        {
+        "name": "Berg, Zach",
+        "affiliation": "",
+        "orcid": "0000-0002-7881-3779"
+        },
+	
+        {
+        "name": "Ghodgaonkar, Isha",
+        "affiliation": "",
+        "orcid": "0000-0001-7982-4288"
+        },
+
+	{
+        "name": "Bordwell, Fischer",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0002-4002-9399"
+        },	
+	
+	{
+        "name": "Zhao, Xinxin",
+        "affiliation": "",
+        "orcid": "0000-0003-1353-8742"
+        },
+	
+        {
+        "name": "Liu, Xinglei",
+        "affiliation": "University of Southern California",
+        "orcid": "0000-0002-5340-3335"
+        },
+        {
+        "name": "Xu, Jiahao",
+        "affiliation": "",
+        "orcid": ""
+        },
+	
+        {
+        "name": "Chakraborty, Subhankar",
+        "affiliation": "Indian Institute of Technology Madras",
+        "orcid": "0000-0002-2084-4062"
+        },
+	
+	{
+        "name": "Banna, Vishnu",
+        "affiliation": "",
+        "orcid": "0000-0002-6444-9806"
+        },
+	
+	{
+        "name": "Chinnakotla, Akhil",
+        "affiliation": "",
+        "orcid": "0000-0002-7903-5091"
+        },
+	
+	{
+        "name": "Goel, Abhinav",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0003-1827-1389"
+        },
+
+	{
+        "name": "Tung, Caleb",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0003-0513-0528"
+        },
+
+	{
+        "name": "Kao, Gore",
+        "affiliation": "Carnegie Mellon University",
+        "orcid": "0000-0003-0644-676X"
+        },
+
+	{
+        "name": "Zakharov, Wei",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0002-7805-6675"
+        },
+
+	{
+        "name": "Shoham, David",
+        "affiliation": "East Tennessee State University",
+        "orcid": "0000-0001-5557-822X"
+        },
+
+	{
+        "name": "Thiruvathukal, George",
+        "affiliation": "Loyola University Chicaco and Argonne National Laboratory",
+        "orcid": "0000-0002-0452-5571"
+        },
+
+	{
+        "name": "Lu, Yung-Hsiang",
+        "affiliation": "Purdue University",
+        "orcid": "0000-0002-5491-7661"
+        }
+    ],
+    "description": "Scripts for extracting human mobility metrics from network camera data",
+    "access_right": "open",
+    "license": "BSD-3-Clause",
+    "prereserve_doi": true,
+    "keywords": [
+        "camera",
+        "computer vision",
+        "network camera",
+        "CAM2",
+	"big data",
+	"image archival",
+	"github",
+	"object detection",
+	"deep learning",
+	"analysis pipeline"
+    ]
+}
